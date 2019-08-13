@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            display: flex;
+            align-items: center;
+            justify-content:center;
+            flex-direction: column;
+        }
+        .row{
+            display: flex;
+            align-items: center;
+            justify-content:center;
+            flex-direction: row
+        }
+        img{
+            height: 250px;
+            width: 250px;
+            margin: 10px ;
+            border: 5px solid darkslateblue;
+        }
+        .otvet{
+            height: 75px;
+            width: 75px;
+            background: grey;
+            margin: 5px;
+            border-radius: 10px;
+            font-size: 50px;
+            font-weight: bold;
+            color: wheat;
+            display: flex;
+            align-items: center;
+            justify-content:center;
+        }
+        .varianty{
+            height: 85px;
+            width: 85px;
+            background: white;
+            margin: 5px;
+            border-radius: 10px;
+            font-size: 50px;
+            font-weight: bold;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content:center;
+        }
+        .cancel{
+            height: 85px;
+            width: 85px;
+            background: darkred;
+            margin: 5px;
+            border-radius: 10px;
+            font-size: 50px;
+            font-weight: bold;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content:center;
+        }
+        .check{
+             height: 85px;
+            width: 85px;
+            background: greenyellow;
+            margin: 5px;
+            border-radius: 10px;
+            font-size: 50px;
+            font-weight: bold;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content:center;
+        }
+    </style>
+</head>
+<body id="main" style="background: url('obou.jpg'); background-size: cover; background-repeat: no-repeat">
+<h1 style="color: white"> Игра: 4 фото одно слово</h1>
+<div class="row">
+<img src="enshtein.jpg">
+    <img src="hate.jpg">
+</div>
+<div class="row">
+    <img src="pot.jpg">
+    <img src="stradaniya.gif" width="200">
+    </div>
+<div class="row">
+    <div id="1" class="otvet"></div>
+    <div id="2" class="otvet"></div>
+     <div id="3" class="otvet"></div>
+     <div id="4" class="otvet"></div>
+     <div id="5" class="otvet"></div>
+     <div id="6" class="otvet"></div>
+     <div id="7" class="otvet"></div>
+     <div id="8" class="otvet"></div>
+     <div id="9" class="otvet"></div>
+</div>
+<div class="row">
+    <div onclick="otvet('О')" class="varianty">О</div>
+     <div onclick="otvet('А')" class="varianty">А</div>
+     <div onclick="otvet('С')" class="varianty">С</div>
+     <div onclick="otvet('И')" class="varianty">И</div>
+     <div onclick="otvet('В')" class="varianty">В</div>
+     <div onclick="otvet('Ё')" class="varianty">Ё</div>
+     <div onclick="otvet('Ф')" class="varianty">Ф</div>
+     <div onclick="otvet('З')" class="varianty">З</div>
+     <div onclick="otvet('Д')" class="varianty">Д</div>
+    <div onclick="check()" class="check">✔</div>
+</div>
+<div class="row">
+     <div onclick="otvet('Л')" class="varianty">Л</div>
+     <div onclick="otvet('К')" class="varianty">К</div>
+     <div onclick="otvet('Ш')" class="varianty">Ш</div>
+     <div onclick="otvet('М')" class="varianty">М</div>
+     <div onclick="otvet('Г')" class="varianty">Г</div>
+     <div onclick="otvet('Т')" class="varianty">Т</div>
+     <div onclick="otvet('О')" class="varianty">О</div>
+     <div onclick="otvet('Х')" class="varianty">Х</div>
+     <div onclick="otvet('А')" class="varianty">А</div>
+     <div onclick="reset()" class="cancel">♺</div>
+</div>
+</body>
+<script>
+    hod=1
+    function otvet(bukva) {
+    if(hod===1){
+        document.getElementById('1').innerHTML=bukva
+    }
+    if (hod===2){
+        document.getElementById('2').innerHTML=bukva
+    }
+    if (hod===3){
+        document.getElementById('3').innerHTML=bukva
+    }
+    if (hod===4){
+        document.getElementById('4').innerHTML=bukva
+    }
+    if (hod===5){
+        document.getElementById('5').innerHTML=bukva
+    }
+    if (hod===6){
+        document.getElementById('6').innerHTML=bukva
+    }
+    if (hod===7){
+        document.getElementById('7').innerHTML=bukva
+    }
+    if (hod===8){
+        document.getElementById('8').innerHTML=bukva
+    }
+    if (hod===9){
+        document.getElementById('9').innerHTML=bukva
+    }
+    hod+=1
+    }
+    function reset() {
+        document.getElementById('1').innerHTML=""
+        document.getElementById('2').innerHTML=""
+        document.getElementById('3').innerHTML=""
+        document.getElementById('4').innerHTML=""
+        document.getElementById('5').innerHTML=""
+        document.getElementById('6').innerHTML=""
+        document.getElementById('7').innerHTML=""
+        document.getElementById('8').innerHTML=""
+        document.getElementById('9').innerHTML=""
+        hod=1
+        
+    }
+    function check() {
+        if (document.getElementById('1').innerHTML==='Д'&&document.getElementById('2').innerHTML==='О'&&document.getElementById('3').innerHTML==='Л'&&document.getElementById('4').innerHTML==='М'&&document.getElementById('5').innerHTML==='А'&&document.getElementById('6').innerHTML==='Т'&&document.getElementById('7').innerHTML==='О'&&document.getElementById('8').innerHTML==='В'&&document.getElementById('9').innerHTML==='А'){
+            alert('Красавчик!!!')
+        }else{
+            alert('Начни сначала и подумай хорошенько!')
+        }
+
+
+    }
+</script>
+</html>
